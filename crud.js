@@ -49,7 +49,7 @@ function showData() {
         showProduct = JSON.parse(localStorage.getItem("productArray"));
     }
     var table = "";
-
+    
     showProduct.forEach(function (element, index) {
         table += `<tr index=${index}>`
         table += `<td>${element.ProductID}</td>`
@@ -57,7 +57,7 @@ function showData() {
         table += `<td>${element.Price}</td>`
         table += `<td>${element.Description}</td>`
         table += `<td><div style="width:100px; height:100px;"><img style=" max-width: 100%; max-height:100%; margin-left:40px; margin-right:20px" src="${element.Photo}"/></div></td>`
-        table += `<td><button type="button" class="btn btn-primary" onclick='editData(${index})' style="" data-bs-toggle="modal" data-bs-target="#productFormModal"><i class="fa fa-eye" aria-hidden="true"></i></button></td>`
+        table += `<td><button type="button" class="btn btn-primary" onclick='editData(${index})' data-bs-toggle="modal" data-bs-target="#productFormModal"><i class="fa fa-eye" aria-hidden="true"></i></button></td>`
         table += `<td><button type="button" class="btn btn-danger" onclick='deleteData(${index})'><i class="fa fa-close" aria-hidden="true"></i></button></td>`
         table += `</tr>`
 
@@ -109,7 +109,6 @@ function editData(index) {
     document.querySelector("#productFormModal #description").value = peopleList[index].Description;
     // btnAdd.textContent = "Update changes";
     editIndex = index;
-
 
 }
 
@@ -165,17 +164,20 @@ function btnUpdate() {
     document.getElementById("price").value = "";
     document.getElementById("description").value = "";
 
-    document.getElementById("btnAdd").style.display = "flex";
-    document.getElementById("btupdate").style.display = "none";
+    // document.getElementById("btnAdd").style.display = "flex";
+    // document.getElementById("btupdate").style.display = "none";
 }
 
 function btnClose() {
+    location.reload();
 
     document.getElementById("product-id").value = "";
     document.getElementById("productName").value = "";
     document.getElementById("price").value = "";
     document.getElementById("description").value = "";
     document.getElementById("imgUser") = "";
+
+   
 }
 
 function search() {
