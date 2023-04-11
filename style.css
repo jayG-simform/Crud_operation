@@ -83,3 +83,6 @@
     content: '\25be';
     margin-left: 5px;
 }
+.error{
+    color: red;
+}
